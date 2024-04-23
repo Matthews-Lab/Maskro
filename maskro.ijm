@@ -2,7 +2,7 @@ img=newArray("image","names","without",".tiff");
 for(i = 0; i < img.length; i++) {
 	open(img[i] +".tiff");
 selectImage(img[i] +".tiff");
-run("Duplicate...", "title=temp-DNA.tiff duplicate channels=11");
+run("Duplicate...", "title=temp-DNA.tiff duplicate channels=11"); // change the channel number to the nucleus channel (or other channel to be used for masking).
 run("16-bit");
 setOption("BlackBackground", true);
 setAutoThreshold("Otsu dark");
