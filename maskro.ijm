@@ -11,11 +11,11 @@ selectImage(img[i]);
 run("Duplicate...", "title=temp-DNA.tiff duplicate channels=11");
 run("16-bit");
 setOption("BlackBackground", true);
-setAutoThreshold("Otsu dark");
+setAutoThreshold("Mean dark");
 run("Convert to Mask");
 run("Despeckle");
 run("Watershed");
-run("Analyze Particles...", "size=4-Infinity show=[Count Masks] display summarize");
-saveAs("Tiff", "/Volumes/sb3222/home/Exp1/masks_fiji/" + img[i]);
+run("Analyze Particles...", "size=22-Infinity show=[Count Masks] display summarize");
+saveAs("Tiff", "/Volumes/sb3222/home/Exp1/masks_fiji_mean_22/" + img[i]);
 run("Close All");
 }
